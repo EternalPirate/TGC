@@ -1,0 +1,13 @@
+<svg:g
+  app-chart-grid-xLines
+  [settings]="settings"
+  [data]="data"
+  [svg]="svg"/>
+<svg:g
+  app-chart-grid-xLabels
+  [settings]="settings"
+  [xData]="data.x"/>
+<svg:g
+  app-chart-grid-yLabels
+  [yData]="data.y"
+  [settings]="settings"/>

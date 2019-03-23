@@ -1,0 +1,18 @@
+<svg
+  [attr.viewBox]="viewBox"
+  [attr.width]="svg.width"
+  [attr.height]="svg.height"
+  [attr.x]="0"
+  [attr.y]="0">
+  <g
+    app-chart-grid
+    [data]="data"
+    [settings]="settings"
+    [svg]="svg"/>
+  <g
+    app-chart-polyline
+    [settings]="settings"
+    [yData]="data.y"
+    [svg]="svg"
+    [visibleFrame]="visibleFrame"/>
+</svg>

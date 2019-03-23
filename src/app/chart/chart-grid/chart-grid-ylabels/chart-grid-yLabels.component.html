@@ -1,0 +1,7 @@
+<svg:text
+  *ngFor="let label of yLabelsArr"
+  [attr.x]="label.x"
+  [attr.y]="label.y"
+  [attr.font-size]="label.fontSize"
+  [attr.fill]="label.fill"
+>{{label.value}}</svg:text>

@@ -1,0 +1,9 @@
+<button
+  *ngFor="let button of buttonsArr; let index = index"
+  [ngClass]="{'active': button.isVisible}"
+  (click)="togglePath(button, index)"
+  class="button"
+><span
+  [style.background]="button.isVisible ? button.color : null"
+  [style.borderColor]="button.color"
+></span>{{button.name}}</button>

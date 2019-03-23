@@ -1,0 +1,8 @@
+<svg:text
+  *ngFor="let text of xLabelsArr"
+  [attr.x]="text.x"
+  [attr.y]="text.y"
+  [attr.opacity]="text.opacity"
+  [attr.font-size]="text.fontSize"
+  [attr.fill]="text.fill"
+>{{text.value}}</svg:text>
