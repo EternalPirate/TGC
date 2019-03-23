@@ -250,10 +250,16 @@ export class ChartThumbFrameComponent implements OnInit {
   }
   
   private calcDragEvent() {
-    const from = Math.floor(this.settings._xLen * (this.rectArr[RectArr.DR].x / this.settings._width));
-    let to = Math.floor(this.settings._xLen * (this.rectArr[RectArr.DR].width / this.settings._width));
-    to += from;
-    
+    // get proportional FROM index
+    let from = this.rectArr[RectArr.DR].x / this.settings._width;
+    // get real FROM index
+    from = Math.floor(this.settings._xLen * from);
+  
+    // get proportional TO index
+    let to = this.rectArr[RectArr.RR].x / this.settings._width;
+    // get real TO index
+    to = Math.floor(this.settings._xLen * to);
+  
     this.chartEventsService.visibleFrame.emit({from, to});
   }
   
