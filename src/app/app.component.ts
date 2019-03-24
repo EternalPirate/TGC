@@ -112,7 +112,7 @@ export class AppComponent {
   }
 
   async getData(): Promise<void> {
-    const data = await this.http.get('assets/data/chart_data_test.json').toPromise() as ChartObj[];
+    const data = await this.http.get('assets/data/chart_data.json').toPromise() as ChartObj[];
 
     this.data = AppComponent.prepareData(data);
   }
