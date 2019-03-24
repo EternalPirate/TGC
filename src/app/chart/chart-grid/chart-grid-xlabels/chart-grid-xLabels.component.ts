@@ -41,7 +41,7 @@ export class ChartGridXLabelsComponent implements OnInit, OnDestroy {
   @Input() xData: SortedX;
   
   
-  private xLabelsArr: XLabelsObj[];
+  xLabelsArr: XLabelsObj[];
   private sub1: Subscription;
 
 

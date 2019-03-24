@@ -19,7 +19,7 @@ export class ChartButtonsComponent implements OnInit {
   @Input() data: SortedData;
   @Input() settings: Settings;
   
-  private buttonsArr: ButtonsObj[];
+  buttonsArr: ButtonsObj[];
   
   
   constructor(private chartEventsService: ChartEventsService) { }

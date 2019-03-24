@@ -15,9 +15,9 @@ export class ChartMainComponent implements OnInit, OnDestroy {
   @Input() settings: Settings;
   
 
-  private visibleFrame: VisibleFrameObj;
-  private viewBox: string;
-  private svg: ChartSvg;
+  visibleFrame: VisibleFrameObj;
+  viewBox: string;
+  svg: ChartSvg;
   private sub1: Subscription;
 
 

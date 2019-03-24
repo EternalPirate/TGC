@@ -23,7 +23,7 @@ export class ChartGridXLinesComponent implements OnInit {
   @Input() svg: ChartSvg;
   
   
-  private linesArr: LineObj[];
+  linesArr: LineObj[];
   
   
   constructor() {

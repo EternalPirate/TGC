@@ -13,9 +13,9 @@ export class ChartThumbComponent implements OnInit {
   @Input() data: SortedData;
   @Input() settings: Settings;
   
-  private visibleFrame: VisibleFrameObj;
-  private viewBox: string;
-  private svg: ChartSvg;
+  visibleFrame: VisibleFrameObj;
+  viewBox: string;
+  svg: ChartSvg;
   
 
   constructor() {}

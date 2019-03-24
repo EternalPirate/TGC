@@ -26,7 +26,7 @@ export class ChartPolylineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() visibleFrame: VisibleFrameObj;
   @Input() svg: ChartSvg;
   
-  private polylineArr: PolylineObj[];
+  polylineArr: PolylineObj[];
   private sub1: Subscription;
   private sub2: Subscription;
   

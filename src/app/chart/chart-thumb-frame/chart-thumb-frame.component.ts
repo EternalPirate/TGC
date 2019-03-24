@@ -35,7 +35,7 @@ export class ChartThumbFrameComponent implements OnInit {
   @Input() settings: Settings;
   @Input() visibleFrame: VisibleFrameObj;
   
-  private rectArr: RectObj[] = [
+  rectArr: RectObj[] = [
     {
       rectId: RectArr.LR,
       isDraggable: false,

@@ -22,9 +22,11 @@ export class ChartGridYLabelsComponent implements OnInit, OnDestroy {
   @Input() settings: Settings;
   @Input() yData: SortedY[];
   
+
+  yLabelsArr: YLabelsObj[];
+  
   
   private horNumMarginBottom = 5;
-  private yLabelsArr: YLabelsObj[];
   private sub1: Subscription;
   
   
