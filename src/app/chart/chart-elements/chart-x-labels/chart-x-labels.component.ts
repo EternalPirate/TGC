@@ -93,7 +93,7 @@ export class ChartXLabelsComponent implements OnInit, OnDestroy {
       const curXLabel = this.xLabelsArr[xLabelsArrIdx];
 
       const loopCalcObj: LoopCalcObj = this.loopCalc(beforeLoopCalcObj, xLabelsArrIdx);
-
+      
       if (curXLabel.value !== loopCalcObj.value) {
         curXLabel.value = loopCalcObj.value;
         curXLabel.x = loopCalcObj.xPoint;
@@ -162,7 +162,7 @@ export class ChartXLabelsComponent implements OnInit, OnDestroy {
     const pointValueIdx = visibleValuesPiece * (index + 1) - visibleValuesMiddlePiece;
     
     // get value
-    const value = visiblePointsArr[pointValueIdx]  ? visiblePointsArr[pointValueIdx].toString() : '0';
+    const value = visiblePointsArr[pointValueIdx] ? visiblePointsArr[pointValueIdx].toString() : '0';
     // get value width
     const valueWidth = Math.round(value.length * chartWidth);
   

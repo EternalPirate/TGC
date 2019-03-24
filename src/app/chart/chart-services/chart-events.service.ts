@@ -70,6 +70,7 @@ export class ChartEventsService {
     }
   };
   
+  toggleButtonSubject: Subject<TogglePolylineObj> = new Subject();
   visibleFrameSubject: Subject<VisibleFrameObj> = new Subject();
   
   private yData: SortedY[];
@@ -108,6 +109,7 @@ export class ChartEventsService {
   toggleButton(togglePolylineObj: TogglePolylineObj): void {
     this.yData[togglePolylineObj.index].isVisible = togglePolylineObj.isVisible;
     
+    this.toggleButtonSubject.next(togglePolylineObj);
     this.setVisibleFrame(this.frameArea.from, this.frameArea.to);
   }
 }

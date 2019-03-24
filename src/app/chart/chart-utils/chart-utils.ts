@@ -10,7 +10,7 @@ export function roundUpVal(val: number): number {
   
 }
 
-export function  calcFrameArea(yData: SortedY[], from: number, to: number): VisibleFrameObj {
+export function calcFrameArea(yData: SortedY[], from: number, to: number): VisibleFrameObj {
   let maxValHeight = 0;
   const visibleArr = [];
   for (let yDataIndex = 0; yDataIndex < yData.length; yDataIndex++) {

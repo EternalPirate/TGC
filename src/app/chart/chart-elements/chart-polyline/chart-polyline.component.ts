@@ -27,6 +27,7 @@ export class ChartPolylineComponent implements OnInit, OnDestroy {
   
   polylineArr: PolylineObj[];
   private sub1: Subscription;
+  private sub2: Subscription;
   
   
   constructor(private ces: ChartEventsService) {}
@@ -35,8 +36,15 @@ export class ChartPolylineComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.polylineArr = this.buildPolyline();
   
+    this.sub1 = this.ces.toggleButtonSubject
+      .subscribe((togglePolylineObj: TogglePolylineObj) => {
+        if (togglePolylineObj) {
+          this.polylineArr[togglePolylineObj.index].visibility = togglePolylineObj.isVisible ? 'visible' : 'hidden';
+        }
+      });
+  
     if (!this.isThumb) {
-      this.sub1 = this.ces.visibleFrameSubject
+      this.sub2 = this.ces.visibleFrameSubject
         .subscribe((visibleFrame: VisibleFrameObj) => {
           if (visibleFrame) {
             this.visibleFrame = visibleFrame;
@@ -48,6 +56,7 @@ export class ChartPolylineComponent implements OnInit, OnDestroy {
   
   ngOnDestroy() {
     this.sub1.unsubscribe();
+    this.sub2.unsubscribe();
   }
   
   
