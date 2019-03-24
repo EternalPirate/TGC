@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { SortedData } from '../../app.component';
-import { Settings } from '../chart.component';
-import { ChartEventsService } from '../chart-events.service';
+import { ChartEventsService } from '../chart-services/chart-events.service';
 
 export interface ButtonsObj {
   name: string;
@@ -17,12 +16,11 @@ export interface ButtonsObj {
 })
 export class ChartButtonsComponent implements OnInit {
   @Input() data: SortedData;
-  @Input() settings: Settings;
   
   buttonsArr: ButtonsObj[];
   
   
-  constructor(private chartEventsService: ChartEventsService) { }
+  constructor(private ces: ChartEventsService) { }
   
   
   ngOnInit() {
@@ -31,7 +29,7 @@ export class ChartButtonsComponent implements OnInit {
   
   private togglePath(button: ButtonsObj, index: number) {
     button.isVisible = !button.isVisible;
-    this.chartEventsService.togglePolyline.emit({
+    this.ces.toggleButton({
       index,
       isVisible: button.isVisible
     });

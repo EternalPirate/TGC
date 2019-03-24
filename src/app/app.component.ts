@@ -31,6 +31,7 @@ export interface SortedY {
   type: string;
   color: string;
   name: string;
+  isVisible: boolean;
   data?: ChartMetaData;
 }
 
@@ -65,6 +66,7 @@ export class AppComponent {
             type: curChartObj.types[key],
             color: curChartObj.colors[key],
             name: curChartObj.names[key],
+            isVisible: true
           });
         }
       }
@@ -112,7 +114,7 @@ export class AppComponent {
   }
 
   async getData(): Promise<void> {
-    const data = await this.http.get('assets/data/chart_data.json').toPromise() as ChartObj[];
+    const data = await this.http.get('assets/data/chart_data_test.json').toPromise() as ChartObj[];
 
     this.data = AppComponent.prepareData(data);
   }

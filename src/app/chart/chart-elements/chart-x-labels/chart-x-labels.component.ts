@@ -2,8 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { SortedX } from '../../../app.component';
-import { Settings } from '../../chart.component';
-import { ChartEventsService, VisibleFrameObj } from '../../chart-events.service';
+import { ChartEventsService, VisibleFrameObj } from '../../chart-services/chart-events.service';
+import { ChartSvg } from '../../chart.component';
 
 interface XLabelsObj {
   value: string | number;
@@ -32,35 +32,33 @@ interface LoopCalcObj {
 }
 
 @Component({
-  selector: '[app-chart-grid-xLabels]',
-  templateUrl: './chart-grid-xLabels.component.html',
-  styleUrls: ['./chart-grid-xLabels.component.scss']
+  selector: '[app-chart-x-labels]',
+  templateUrl: './chart-x-labels.component.html',
+  styleUrls: ['./chart-x-labels.component.scss']
 })
-export class ChartGridXLabelsComponent implements OnInit, OnDestroy {
-  @Input() settings: Settings;
-  @Input() xData: SortedX;
+export class ChartXLabelsComponent implements OnInit, OnDestroy {
+  @Input() svg: ChartSvg;
   
   
+  private xData: SortedX;
   xLabelsArr: XLabelsObj[];
   private sub1: Subscription;
 
 
-  constructor(private chartEventsService: ChartEventsService) {
-    this.sub1 = this.chartEventsService
-      .visibleFrame
+  constructor(private ces: ChartEventsService) {
+    this.sub1 = this.ces
+      .visibleFrameSubject
       .subscribe((visibleFrame: VisibleFrameObj) => {
-      if (this.xLabelsArr && this.xLabelsArr.length > 0) {
-        this.updateLabels(visibleFrame);
-      }
+        if (this.xLabelsArr && this.xLabelsArr.length > 0) {
+          this.updateLabels(visibleFrame);
+        }
     });
   }
 
 
   ngOnInit() {
-    this.xLabelsArr = this.buildLabels({
-      from: 0,
-      to: this.settings._xLen * this.settings._initRatioPercent
-    });
+    this.xData = this.ces.getXData();
+    this.xLabelsArr = this.buildLabels(this.ces.getVisibleFrame());
   }
   
   ngOnDestroy() {
@@ -79,7 +77,7 @@ export class ChartGridXLabelsComponent implements OnInit, OnDestroy {
         x: loopCalcObj.xPoint,
         y: loopCalcObj.yPoint,
         opacity: '1',
-        fontSize: this.settings.grid.fontSize,
+        fontSize: this.ces.settings.grid.fontSize,
         fill: 'black',
       });
     }
@@ -105,11 +103,11 @@ export class ChartGridXLabelsComponent implements OnInit, OnDestroy {
   
   private beforeLoopCalc(visibleFrame: VisibleFrameObj): BeforeLoopCalcObj {
     // one char width
-    const chartWidth = this.settings.grid.fontSize / 2;
+    const chartWidth = this.ces.settings.grid.fontSize / 2;
   
   
     // calculate y point position
-    const yPoint = this.settings.main.height - (this.settings.main.paddingBot / 2);
+    const yPoint = this.ces.settings.main.height - (this.ces.settings.main.paddingBot / 2);
     
     
     // left right padding (in chars)

@@ -7,12 +7,8 @@
   [attr.preserveAspectRatio]="'none'">
   <g
     app-chart-polyline
-    [settings]="settings"
-    [yData]="data.y"
     [svg]="svg"
+    [isThumb]="true"
     [visibleFrame]="visibleFrame"/>
-  <g
-    app-chart-thumb-frame
-    [settings]="settings"
-    [visibleFrame]="visibleFrame"/>
+  <g app-chart-frame [svg]="svg"/>
 </svg>

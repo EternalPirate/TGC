@@ -7,12 +7,11 @@ import { ChartMainComponent } from './chart/chart-main/chart-main.component';
 import { ChartComponent } from './chart/chart.component';
 import { ChartThumbComponent } from './chart/chart-thumb/chart-thumb.component';
 import { ChartButtonsComponent } from './chart/chart-buttons/chart-buttons.component';
-import { ChartGridComponent } from './chart/chart-grid/chart-grid.component';
-import { ChartPolylineComponent } from './chart/chart-polyline/chart-polyline.component';
-import { ChartThumbFrameComponent } from './chart/chart-thumb-frame/chart-thumb-frame.component';
-import { ChartGridXLinesComponent } from './chart/chart-grid/chart-grid-xLines/chart-grid-xLines.component';
-import { ChartGridXLabelsComponent } from './chart/chart-grid/chart-grid-xLabels/chart-grid-xLabels.component';
-import { ChartGridYLabelsComponent } from './chart/chart-grid/chart-grid-yLabels/chart-grid-yLabels.component';
+import { ChartPolylineComponent } from './chart/chart-elements/chart-polyline/chart-polyline.component';
+import { ChartFrameComponent } from './chart/chart-elements/chart-frame/chart-frame.component';
+import { ChartXLinesComponent } from './chart/chart-elements/chart-x-lines/chart-x-lines.component';
+import { ChartXLabelsComponent } from './chart/chart-elements/chart-x-labels/chart-x-labels.component';
+import { ChartYLabelsComponent } from './chart/chart-elements/chart-y-labels/chart-y-labels.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +20,11 @@ import { ChartGridYLabelsComponent } from './chart/chart-grid/chart-grid-yLabels
     ChartComponent,
     ChartThumbComponent,
     ChartButtonsComponent,
-    ChartGridComponent,
-    ChartGridXLabelsComponent,
-    ChartGridYLabelsComponent,
+    ChartXLabelsComponent,
+    ChartYLabelsComponent,
     ChartPolylineComponent,
-    ChartThumbFrameComponent,
-    ChartGridXLinesComponent
+    ChartFrameComponent,
+    ChartXLinesComponent
   ],
   imports: [
     BrowserModule,

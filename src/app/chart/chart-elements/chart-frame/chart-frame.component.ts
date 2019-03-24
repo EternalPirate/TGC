@@ -1,12 +1,11 @@
 import {
   Component,
-  ElementRef,
-  Input,
-  OnInit,
+  ElementRef, Input,
+  OnInit
 } from '@angular/core';
 
-import { Settings } from '../chart.component';
-import { ChartEventsService, VisibleFrameObj } from '../chart-events.service';
+import { ChartEventsService } from '../../chart-services/chart-events.service';
+import { ChartSvg } from '../../chart.component';
 
 enum RectArr {
   LR, // Left Rect
@@ -27,13 +26,12 @@ interface RectObj {
 }
 
 @Component({
-  selector: '[app-chart-thumb-frame]',
-  templateUrl: './chart-thumb-frame.component.html',
-  styleUrls: ['./chart-thumb-frame.component.scss']
+  selector: '[app-chart-frame]',
+  templateUrl: './chart-frame.component.html',
+  styleUrls: ['./chart-frame.component.scss']
 })
-export class ChartThumbFrameComponent implements OnInit {
-  @Input() settings: Settings;
-  @Input() visibleFrame: VisibleFrameObj;
+export class ChartFrameComponent implements OnInit {
+  @Input() svg: ChartSvg;
   
   rectArr: RectObj[] = [
     {
@@ -85,7 +83,7 @@ export class ChartThumbFrameComponent implements OnInit {
   private dragEl;
   
   
-  constructor(private chartEventsService: ChartEventsService, private el: ElementRef) {}
+  constructor(private ces: ChartEventsService, private el: ElementRef) {}
   
 
   ngOnInit() {
@@ -96,7 +94,7 @@ export class ChartThumbFrameComponent implements OnInit {
     // draggable border init width
     const DBWidth = 14;
     // draggable rect init width
-    const DRWidth = this.settings._width * this.settings._initRatioPercent;
+    const DRWidth = this.ces.width * this.ces.initRatioPercent;
   
     // create draggable frame overlay
     const rectArrLen = this.rectArr.length;
@@ -113,7 +111,7 @@ export class ChartThumbFrameComponent implements OnInit {
           break;
         case RectArr.RR :
           // right rect width = svg width - draggable rect width
-          initRectWidth = this.settings._width - DRWidth;
+          initRectWidth = this.ces.width - DRWidth;
           // right rect X = draggable rect width
           initRectX = DRWidth;
           break;
@@ -136,7 +134,7 @@ export class ChartThumbFrameComponent implements OnInit {
       currRect.x = initRectX;
       currRect.y = 0;
       currRect.width = initRectWidth;
-      currRect.height = this.settings.main.height;
+      currRect.height = this.svg.height;
     }
   
     this.loadDraggableFrameEvents();
@@ -217,7 +215,7 @@ export class ChartThumbFrameComponent implements OnInit {
             this.rectArr[RectArr.DR].width = this.rectArr[RectArr.DRR].x - this.rectArr[RectArr.DLR].x + this.rectArr[RectArr.DLR].width;
     
             // move sides according to drag el
-            this.rectArr[RectArr.RR].width = this.settings._width - this.rectArr[RectArr.DRR].x;
+            this.rectArr[RectArr.RR].width = this.ces.width - this.rectArr[RectArr.DRR].x;
             this.rectArr[RectArr.RR].x = this.rectArr[RectArr.DRR].x + this.rectArr[RectArr.DRR].width;
           }
           break;
@@ -227,7 +225,7 @@ export class ChartThumbFrameComponent implements OnInit {
           this.rectArr[RectArr.LR].width = this.rectArr[RectArr.DR].x;
   
           this.rectArr[RectArr.RR].width =
-            this.checkBorder(this.settings._width - (this.rectArr[RectArr.DR].x + this.rectArr[RectArr.DR].width));
+            this.checkBorder(this.ces.width - (this.rectArr[RectArr.DR].x + this.rectArr[RectArr.DR].width));
           this.rectArr[RectArr.RR].x =
             this.checkBorder(this.rectArr[RectArr.DR].x + this.rectArr[RectArr.DR].width);
   
@@ -251,16 +249,16 @@ export class ChartThumbFrameComponent implements OnInit {
   
   private calcDragEvent() {
     // get proportional FROM index
-    let from = this.rectArr[RectArr.DR].x / this.settings._width;
+    let from = this.rectArr[RectArr.DR].x / this.ces.width;
     // get real FROM index
-    from = Math.floor(this.settings._xLen * from);
+    from = Math.floor(this.ces.xLen * from);
   
     // get proportional TO index
-    let to = this.rectArr[RectArr.RR].x / this.settings._width;
+    let to = this.rectArr[RectArr.RR].x / this.ces.width;
     // get real TO index
-    to = Math.floor(this.settings._xLen * to);
+    to = Math.floor(this.ces.xLen * to);
   
-    this.chartEventsService.visibleFrame.emit({from, to});
+    this.ces.setVisibleFrame(from, to);
   }
   
   private getMouseXPosition(event) {
@@ -278,8 +276,8 @@ export class ChartThumbFrameComponent implements OnInit {
   private checkBorder(num) {
     if (num <= 0) {
       return 0;
-    } else if (num >= this.settings._width) {
-      return this.settings._width;
+    } else if (num >= this.ces.width) {
+      return this.ces.width;
     } else {
       return num;
     }

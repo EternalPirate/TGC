@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { Subscription } from 'rxjs';
 
-import { ChartSvg, Settings } from '../chart.component';
-import { ChartEventsService, TogglePolylineObj, VisibleFrameObj } from '../chart-events.service';
-import { ChartMetaData, SortedY } from '../../app.component';
+import { ChartSvg } from '../../chart.component';
+import { ChartEventsService, TogglePolylineObj, VisibleFrameObj } from '../../chart-services/chart-events.service';
+import { ChartMetaData, SortedY } from '../../../app.component';
+import { Subscription } from 'rxjs';
 
 interface PolylineObj {
   points: string[];
@@ -20,56 +20,42 @@ interface PolylineObj {
   templateUrl: './chart-polyline.component.html',
   styleUrls: ['./chart-polyline.component.scss']
 })
-export class ChartPolylineComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() yData: SortedY[];
-  @Input() settings: Settings;
+export class ChartPolylineComponent implements OnInit, OnDestroy {
   @Input() visibleFrame: VisibleFrameObj;
   @Input() svg: ChartSvg;
+  @Input() isThumb: boolean;
   
   polylineArr: PolylineObj[];
   private sub1: Subscription;
-  private sub2: Subscription;
   
   
-  constructor(private chartEventsService: ChartEventsService) {
-    this.sub1 = this.chartEventsService
-      .togglePolyline
-      .subscribe((polyline: TogglePolylineObj) => {
-        this.polylineArr[polyline.index].visibility = polyline.isVisible ? 'visible' : 'hidden';
-      });
-  
-  
-    this.sub2 = this.chartEventsService
-      .maxValHeight
-      .subscribe((maxValHeight: number) => {
-        if (this.settings && this.settings._maxValHeight) {
-          this.settings._maxValHeight = maxValHeight;
-        }
-      });
-  }
+  constructor(private ces: ChartEventsService) {}
   
   
   ngOnInit() {
     this.polylineArr = this.buildPolyline();
-  }
   
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.polylineArr && this.polylineArr.length > 0) {
-      this.visibleFrame = changes.visibleFrame.currentValue;
-      this.updatePolyline();
+    if (!this.isThumb) {
+      this.sub1 = this.ces.visibleFrameSubject
+        .subscribe((visibleFrame: VisibleFrameObj) => {
+          if (visibleFrame) {
+            this.visibleFrame = visibleFrame;
+            this.updatePolyline();
+          }
+        });
     }
   }
   
   ngOnDestroy() {
     this.sub1.unsubscribe();
-    this.sub2.unsubscribe();
   }
+  
   
   private buildPolyline(): PolylineObj[] {
     const polylineArr: PolylineObj[] = [];
-    const yDataLen = this.yData.length;
+    const yDataLen = this.visibleFrame.visibleArr.length;
     for (let yDataIdx = 0; yDataIdx < yDataLen; yDataIdx++) {
-      const curData: SortedY = this.yData[yDataIdx];
+      const curData: SortedY = this.visibleFrame.visibleArr[yDataIdx];
       const curDataArr: ChartMetaData = curData.data.slice(this.visibleFrame.from, this.visibleFrame.to);
       const pointsArr: string[] = this.calcXY(curDataArr);
   
@@ -79,7 +65,7 @@ export class ChartPolylineComponent implements OnInit, OnChanges, OnDestroy {
         dataName: curData.name,
         dataType: curData.type,
         strokeWidth: this.svg.polylineStrokeWidth,
-        visibility: 'visible',
+        visibility: curData.isVisible ? 'visible' : 'hidden',
         fill: 'none'
       });
     }
@@ -88,13 +74,14 @@ export class ChartPolylineComponent implements OnInit, OnChanges, OnDestroy {
   }
   
   private updatePolyline(): void {
-    const yDataLen = this.yData.length;
+    const yDataLen = this.visibleFrame.visibleArr.length;
     for (let yDataIdx = 0; yDataIdx < yDataLen; yDataIdx++) {
-      const curData: SortedY = this.yData[yDataIdx];
+      const curData: SortedY = this.visibleFrame.visibleArr[yDataIdx];
       const curPolyline: PolylineObj = this.polylineArr[yDataIdx];
       const curDataArr: ChartMetaData = curData.data.slice(this.visibleFrame.from, this.visibleFrame.to);
   
       curPolyline.points = this.calcXY(curDataArr);
+      curPolyline.visibility = curData.isVisible ? 'visible' : 'hidden';
     }
   }
   
@@ -105,13 +92,13 @@ export class ChartPolylineComponent implements OnInit, OnChanges, OnDestroy {
     
     for (let dataIndex = 0; dataIndex < dataLength; dataIndex++) {
       const curItem = Number(data[dataIndex]);
-      const pointStepGap: number = this.settings._width / (dataLength - 1);
+      const pointStepGap: number = this.ces.width / (dataLength - 1);
       const xPoint = (pointStepGap * dataIndex).toFixed(4);
       // get proportional val of Y point
-      let yPoint = curItem / this.settings._maxValHeight;
-      yPoint *= this.settings.main.height - paddingBot;
+      let yPoint = curItem / this.visibleFrame.maxValHeight;
+      yPoint *= this.svg.height - paddingBot;
       // turn over lines and add ver padding
-      yPoint = Number((this.settings.main.height - yPoint - paddingBot).toFixed(4));
+      yPoint = Number((this.svg.height - yPoint - paddingBot).toFixed(4));
 
       // create lines array [x,y]
       pointsArr.push(`${xPoint} ${yPoint}`);
