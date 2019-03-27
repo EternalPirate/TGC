@@ -3,8 +3,6 @@ import {
   ElementRef, Input,
   OnInit
 } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
 
 import { ChartEventsService } from '../../chart-services/chart-events.service';
 import { ChartSvg } from '../../chart.component';
@@ -148,53 +146,34 @@ export class ChartFrameComponent implements OnInit {
   
   private loadDraggableFrameEvents() {
     // add mouse/touch events
-  
-    fromEvent(this.el.nativeElement, 'mousedown')
-      .subscribe(event => {
-        this.startDrag(event);
-      });
     
-
-    fromEvent(this.el.nativeElement, 'mousemove')
-      .pipe(throttleTime(40))
-      .subscribe(event => {
-        this.onDrag(event);
-      });
-    
-
-    fromEvent(this.el.nativeElement, 'mouseup')
-      .subscribe(() => {
-        this.endDrag();
-      });
-    fromEvent(this.el.nativeElement, 'mouseleave')
-      .subscribe(() => {
-        this.endDrag();
-      });
-    fromEvent(this.el.nativeElement, 'touchstart')
-      .subscribe(event => {
-        this.startDrag(event);
-      });
-  
-  
-    fromEvent(this.el.nativeElement, 'touchmove')
-      .pipe(throttleTime(40))
-      .subscribe(event => {
-        this.onDrag(event);
-      });
-  
-  
-    fromEvent(this.el.nativeElement, 'touchend')
-      .subscribe(() => {
-        this.endDrag();
-      });
-    fromEvent(this.el.nativeElement, 'touchleave')
-      .subscribe(() => {
-        this.endDrag();
-      });
-    fromEvent(this.el.nativeElement, 'touchcancel')
-      .subscribe(() => {
-        this.endDrag();
-      });
+    this.el.nativeElement.addEventListener('mousedown', (event) => {
+      this.startDrag(event);
+    });
+    this.el.nativeElement.addEventListener('mousemove', (event) => {
+      this.onDrag(event);
+    });
+    this.el.nativeElement.addEventListener('mouseup', () => {
+      this.endDrag();
+    });
+    this.el.nativeElement.addEventListener('mouseleave', () => {
+      this.endDrag();
+    });
+    this.el.nativeElement.addEventListener('touchstart', (event) => {
+      this.startDrag(event);
+    });
+    this.el.nativeElement.addEventListener('touchmove', (event) => {
+      this.onDrag(event);
+    });
+    this.el.nativeElement.addEventListener('touchend', () => {
+      this.endDrag();
+    });
+    this.el.nativeElement.addEventListener('touchleave', () => {
+      this.endDrag();
+    });
+    this.el.nativeElement.addEventListener('touchcancel', () => {
+      this.endDrag();
+    });
   }
   
   private startDrag(event) {
