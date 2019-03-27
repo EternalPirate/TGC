@@ -81,9 +81,18 @@ export class ChartFrameComponent implements OnInit {
     }
   ];
   private dragEl;
+  // draggable border init width
+  private DBWidth = 14;
+  // draggable rect init width
+  private DRWidth: number;
+  // min gap between borders
+  private minBorderGap: number;
   
   
-  constructor(private ces: ChartEventsService, private el: ElementRef) {}
+  constructor(private ces: ChartEventsService, private el: ElementRef) {
+    this.DRWidth = this.ces.width * this.ces.initRatioPercent;
+    this.minBorderGap = this.DBWidth * 4;
+  }
   
 
   ngOnInit() {
@@ -91,11 +100,6 @@ export class ChartFrameComponent implements OnInit {
   }
   
   private buildDraggableFrame() {
-    // draggable border init width
-    const DBWidth = 14;
-    // draggable rect init width
-    const DRWidth = this.ces.width * this.ces.initRatioPercent;
-  
     // create draggable frame overlay
     const rectArrLen = this.rectArr.length;
     for (let rectArrIdx = 0; rectArrIdx < rectArrLen; rectArrIdx++) {
@@ -111,22 +115,22 @@ export class ChartFrameComponent implements OnInit {
           break;
         case RectArr.RR :
           // right rect width = svg width - draggable rect width
-          initRectWidth = this.ces.width - DRWidth;
+          initRectWidth = this.ces.width - this.DRWidth;
           // right rect X = draggable rect width
-          initRectX = DRWidth;
+          initRectX = this.DRWidth;
           break;
         case RectArr.DR :
-          initRectWidth = DRWidth;
+          initRectWidth = this.DRWidth;
           initRectX = 0;
           break;
         case RectArr.DLR :
-          initRectWidth = DBWidth;
+          initRectWidth = this.DBWidth;
           initRectX = 0;
           break;
         case RectArr.DRR :
-          initRectWidth = DBWidth;
+          initRectWidth = this.DBWidth;
           // draggable right border X = draggable rect width - draggable border width
-          initRectX = DRWidth - DBWidth;
+          initRectX = this.DRWidth - this.DBWidth;
           break;
       }
     
@@ -196,32 +200,55 @@ export class ChartFrameComponent implements OnInit {
       // calculate drag position
       const translateX = Math.floor(clientX - this.dragEl.offsetX);
   
-  
-      this.rectArr[rectId].x = this.checkBorder(this.dragEl.x + translateX);
-  
       
+      // check for drag el
       switch (rectId) {
         case RectArr.DLR:
         case RectArr.DRR:
-          // border drag
-          // move borders according to drag el
+          // border drag case
           if (rectId === RectArr.DLR) {
+            const DLRx = this.checkBorder(this.dragEl.x + translateX);
+  
+            // prevent cross dragging border
+            if (DLRx + this.minBorderGap >= this.rectArr[RectArr.DRR].x) {
+              return;
+            }
+            
+            // border drag
+            this.rectArr[RectArr.DLR].x = DLRx;
+  
+  
+            // move other rects according to drag border
             this.rectArr[RectArr.DR].width = this.rectArr[RectArr.RR].x - this.rectArr[RectArr.DLR].x;
             this.rectArr[RectArr.DR].x = this.rectArr[RectArr.DLR].x;
     
-            // move sides according to drag el
             this.rectArr[RectArr.LR].width = this.rectArr[RectArr.DR].x;
           } else if (rectId === RectArr.DRR) {
+            const DRRx = this.checkBorder(this.dragEl.x + translateX);
+  
+            // prevent cross dragging border
+            if (DRRx - this.minBorderGap <= this.rectArr[RectArr.DLR].x) {
+              return;
+            }
+  
+            // border drag
+            this.rectArr[RectArr.DRR].x = DRRx;
+  
+  
+            // move other rects according to drag border
             this.rectArr[RectArr.DR].width = this.rectArr[RectArr.DRR].x - this.rectArr[RectArr.DLR].x + this.rectArr[RectArr.DLR].width;
     
-            // move sides according to drag el
             this.rectArr[RectArr.RR].width = this.ces.width - this.rectArr[RectArr.DRR].x;
             this.rectArr[RectArr.RR].x = this.rectArr[RectArr.DRR].x + this.rectArr[RectArr.DRR].width;
           }
           break;
         case RectArr.DR:
-          // rect drag
-          // move sides according to drag el
+          const DRx = this.checkBorder(this.dragEl.x + translateX);
+          // draggable rect drag
+          this.rectArr[RectArr.DR].x = DRx;
+  
+  
+          // move other rects according to drag border
           this.rectArr[RectArr.LR].width = this.rectArr[RectArr.DR].x;
   
           this.rectArr[RectArr.RR].width =
@@ -230,7 +257,6 @@ export class ChartFrameComponent implements OnInit {
             this.checkBorder(this.rectArr[RectArr.DR].x + this.rectArr[RectArr.DR].width);
   
   
-          // move borders according to drag el
           this.rectArr[RectArr.DLR].x = this.rectArr[RectArr.DR].x;
           this.rectArr[RectArr.DRR].x = this.rectArr[RectArr.RR].x - this.rectArr[RectArr.DRR].width;
           break;
