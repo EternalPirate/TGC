@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import '~/App.css';
+import appStyle from '~/App.scss';
 
 import { ChartMain } from '~/hocComponents/ChartMain/ChartMain';
 import { ChartButtons } from '~/hocComponents/ChartButtons/ChartButtons';
@@ -21,6 +21,7 @@ interface AppComponentState {
 
 class App extends Component<any, AppComponentState> {
     componentDidMount() {
+        // get x axis length
         const xLen = this.props.data.x.data.length - 1;
     
         // init visible frame will be 20% of chart length
@@ -35,13 +36,13 @@ class App extends Component<any, AppComponentState> {
     
     render() {
         return (
-            <React.Fragment>
+            <div className={appStyle.App}>
               <ChartMain/>
               
               <ChartThumb/>
         
               <ChartButtons/>
-            </React.Fragment>
+            </div>
         );
     }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import chartFrameStyle from './ChartFrame.scss';
+
 import { FrameState } from '~/store/reducers/chartFrame/chartFrameReducer';
 import { CombinedState } from '~/store/reducers';
 
@@ -10,7 +12,7 @@ class ChartFrame extends Component<any, FrameState> {
 		console.log(this.props.frameState);
 		
 		return (
-			<g>
+			<g className={chartFrameStyle.g}>
 				<rect
 					x="0"
 					y="0"

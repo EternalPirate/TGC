@@ -2,23 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="196cb070-741d-488f-8b92-363d82d8175b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/typings.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TGC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TGC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocComponents/ChartMain/ChartMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocComponents/ChartMain/ChartMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartPolyline/ChartPolyline.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartPolyline/ChartPolyline.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartXLabels/ChartXLabels.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartXLabels/ChartXLabels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartXLines/ChartXLines.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartXLines/ChartXLines.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartYLabels/ChartYLabels.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartYLabels/ChartYLabels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocComponents/ChartButtons/ChartButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocComponents/ChartButtons/ChartButtons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocComponents/ChartMain/ChartMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocComponents/ChartMain/ChartMain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/chartFrameActions/chartFrameActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/chartFrameActions/chartFrameActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/chartFrameActions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/chartFrameActions/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/chartFrame/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/chartFrame/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducers/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducers/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/frameUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/frameUtils.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,11 +37,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="3" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
+              <folding>
+                <element signature="e#14217#14481#0" />
+                <element signature="e#14629#15717#0" />
+                <element signature="e#15876#16804#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,16 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chartEventsService</find>
-      <find>this.settings._maxValHeight</find>
-      <find>his.chartEventsService.visibleFrame.emit({from, to});</find>
-      <find>_maxValHeight</find>
-      <find>calcMaxValues</find>
-      <find>settings._maxValHeight</find>
-      <find>.visibleFrame</find>
-      <find>pipe</find>
-      <find>debounceTime</find>
-      <find>throttleTime</find>
       <find>V</find>
       <find>pipe(debounceTime(100))</find>
       <find>ChartGridXLabelsComponent</find>
@@ -77,6 +126,22 @@
       <find>calcInitState</find>
       <find>rootActions</find>
       <find>alias</find>
+      <find>loaders</find>
+      <find>sassRegex</find>
+      <find>css-loade</find>
+      <find>getStyleLoaders</find>
+      <find>module.file_ext</find>
+      <find>file_ext=.</find>
+      <find>flowconfig</find>
+      <find>module.</find>
+      <find>cssRegex</find>
+      <find>scss</find>
+      <find>&quot;~&quot;</find>
+      <find>sass-loader</find>
+      <find>local</find>
+      <find>resolve</find>
+      <find>react-scripts</find>
+      <find>extensions</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,10 +193,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/store/actions/rootActions/index.tsx" />
         <option value="$PROJECT_DIR$/src/store/actions/rootActions/rootActions.tsx" />
-        <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/index.tsx" />
         <option value="$PROJECT_DIR$/src/utils/frameUtils.tsx" />
         <option value="$PROJECT_DIR$/src/store/reducers/index.tsx" />
         <option value="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" />
@@ -142,7 +204,18 @@
         <option value="$PROJECT_DIR$/src/store/actions/chartFrameActions/index.tsx" />
         <option value="$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.tsx" />
         <option value="$PROJECT_DIR$/src/hocComponents/ChartMain/ChartMain.tsx" />
+        <option value="$PROJECT_DIR$/.flowconfig" />
+        <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/index.scss" />
+        <option value="$PROJECT_DIR$/config/paths.js" />
+        <option value="$PROJECT_DIR$/declaration.d.ts" />
+        <option value="$PROJECT_DIR$/global.d.ts" />
+        <option value="$PROJECT_DIR$/config/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/typings.d.ts" />
+        <option value="$PROJECT_DIR$/src/typings.d.ts" />
         <option value="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx" />
+        <option value="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.scss" />
       </list>
     </option>
   </component>
@@ -157,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,10 +242,24 @@
               <item name="TGC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TGC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TGC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ChartFrame" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,17 +276,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="D:\PROJECTS\MY\TGC\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PROJECTS\MY\TGC\src\app\chart" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\MY\TGC\src" />
       <recent name="D:\PROJECTS\MY\TGC\src\app\chart\chart-services" />
       <recent name="D:\PROJECTS\MY\TGC\src\app\chart\chart-elements" />
       <recent name="D:\PROJECTS\MY\TGC\src\app\chart\chart-thumb" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\MY\TGC\src\app\chart" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -255,12 +342,13 @@
       <workItem from="1553967440496" duration="19000" />
       <workItem from="1553967476139" duration="2092000" />
       <workItem from="1553974193539" duration="565000" />
-      <workItem from="1553974776079" duration="2883000" />
+      <workItem from="1553974776079" duration="5827000" />
+      <workItem from="1553982450828" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67357000" />
+    <option name="totallyTimeSpent" value="74828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,14 +363,14 @@
     <frame x="545" y="0" width="1382" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27773643" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27752978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962378" visible="true" weight="0.2524698" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985119" visible="true" weight="0.3249453" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.33150384" />
@@ -290,7 +378,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32929516" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003762" side_tool="true" weight="0.24559471" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5014881" side_tool="true" weight="0.3249453" />
       <window_info anchor="bottom" id="Quokka" order="12" weight="0.3295964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -419,43 +507,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.css">
+    <entry file="file://$PROJECT_DIR$/src/hocComponents/ChartThumb/ChartThumb.scss">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="268" selection-start-line="268" selection-end-line="268" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/webpackDevServer.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1127" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/paths.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-887" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-912" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/react-app-env.d.ts">
@@ -464,13 +526,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -581,9 +636,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/ChartXLines/ChartXLines.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChartXLabels/ChartXLabels.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ChartPolyline/ChartPolyline.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -591,17 +643,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-dev-utils/getCSSModuleLocalIdent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ChartXLabels/ChartXLabels.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.flowconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/paths.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/declaration.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
+          <folding>
+            <element signature="e#14217#14481#0" />
+            <element signature="e#14629#15717#0" />
+            <element signature="e#15876#16804#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typings.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
