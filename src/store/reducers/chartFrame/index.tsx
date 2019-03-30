@@ -1,3 +1,3 @@
 export {
 	chartFrameReducer
-} from './chartFrameReducer'
+} from '~/store/reducers/chartFrame/chartFrameReducer'

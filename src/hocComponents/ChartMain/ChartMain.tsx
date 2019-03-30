@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { ChartXLines } from '../../components/ChartXLines/ChartXLines';
-import { ChartXLabels } from '../../components/ChartXLabels/ChartXLabels';
-import { ChartPolyline } from '../../components/ChartPolyline/ChartPolyline';
-import { ChartYLabels } from '../../components/ChartYLabels/ChartYLabels';
+
+import { ChartXLines } from '~/components/ChartXLines/ChartXLines';
+import { ChartXLabels } from '~/components/ChartXLabels/ChartXLabels';
+import { ChartYLabels } from '~/components/ChartYLabels/ChartYLabels';
+import { ChartPolyline } from '~/components/ChartPolyline/ChartPolyline';
 
 export class ChartMain extends Component {
 	

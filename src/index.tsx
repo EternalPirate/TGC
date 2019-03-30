@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore, Store } from 'redux';
 import { Provider } from 'react-redux';
 
-import './index.css';
+import '~/index.css';
 
-import App from './App';
-import reducers, { CombinedState } from './store/reducers';
+import App from '~/App';
+import reducers, { CombinedState } from '~/store/reducers';
 
 const store: Store<CombinedState> = createStore(reducers);
 

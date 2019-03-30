@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 
-import { rootReducers } from './rootReducers';
-import { chartFrameReducer } from './chartFrame';
-import { RootState } from './rootReducers/rootReducers';
+import { rootReducers, RootState } from '~/store/reducers/rootReducers/rootReducers';
+import { chartFrameReducer } from '~/store/reducers/chartFrame';
+
 
 export interface CombinedState {
 	rootState: RootState;

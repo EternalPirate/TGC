@@ -1,4 +1,4 @@
-import { SortedY } from '../models/dataModel';
+import { SortedY } from '~/models/dataModel';
 
 export function roundUpVal(val: number) {
 	// round up maxVal

@@ -2,7 +2,8 @@ import {
 	DRAG_LEFT_DRAGGABLE_BORDER,
 	DRAG_RIGHT_DRAGGABLE_BORDER,
 	UPDATE_FRAME
-} from '../../actions/chartFrameActions';
+} from '~/store/actions/chartFrameActions';
+
 
 export interface FrameState {
 	// from index

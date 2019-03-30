@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './App.css';
+import '~/App.css';
 
-import { ChartMain } from './hocComponents/ChartMain/ChartMain';
-import { ChartButtons } from './hocComponents/ChartButtons/ChartButtons';
-import { ChartThumb } from './hocComponents/ChartThumb/ChartThumb';
-import { calcFrameArea } from './utils/frameUtils';
-import { updateFrame } from './store/actions/chartFrameActions';
-import { ChartProp } from './store/reducers/rootReducers/rootReducers';
-import { CombinedState } from './store/reducers';
-import { SortedData } from './models/dataModel';
+import { ChartMain } from '~/hocComponents/ChartMain/ChartMain';
+import { ChartButtons } from '~/hocComponents/ChartButtons/ChartButtons';
+import { ChartThumb } from '~/hocComponents/ChartThumb/ChartThumb';
+import { calcFrameArea } from '~/utils/frameUtils';
+import { updateFrame } from '~/store/actions/chartFrameActions';
+import { ChartProp } from '~/store/reducers/rootReducers/rootReducers';
+import { CombinedState } from '~/store/reducers';
+import { SortedData } from '~/models/dataModel';
 
 
 interface AppComponentState {

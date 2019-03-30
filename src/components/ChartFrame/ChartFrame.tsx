@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FrameState } from '../../store/reducers/chartFrame/chartFrameReducer';
-import { CombinedState } from '../../store/reducers';
+
+import { FrameState } from '~/store/reducers/chartFrame/chartFrameReducer';
+import { CombinedState } from '~/store/reducers';
 
 class ChartFrame extends Component<any, FrameState> {
 	

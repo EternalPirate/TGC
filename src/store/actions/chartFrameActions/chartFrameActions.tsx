@@ -1,4 +1,4 @@
-import { FrameState } from '../../reducers/chartFrame/chartFrameReducer';
+import { FrameState } from '~/store/reducers/chartFrame/chartFrameReducer';
 
 export const DRAG_LEFT_DRAGGABLE_BORDER = 'DRAG_LEFT_DRAGGABLE_BORDER';
 export const DRAG_RIGHT_DRAGGABLE_BORDER = 'DRAG_RIGHT_DRAGGABLE_BORDER';

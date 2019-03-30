@@ -1,4 +1,4 @@
-import { SortedData } from '../../../models/dataModel';
+import { SortedData } from '~/models/dataModel';
 
 export interface Settings {
 	// main chart

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ChartPolyline } from '../../components/ChartPolyline/ChartPolyline';
-import ChartFrame from '../../components/ChartFrame/ChartFrame';
+
+import { ChartPolyline } from '~/components/ChartPolyline/ChartPolyline';
+import ChartFrame from '~/components/ChartFrame/ChartFrame';
 
 export class ChartThumb extends Component {
 	
