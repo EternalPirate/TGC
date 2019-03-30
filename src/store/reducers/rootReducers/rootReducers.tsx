@@ -437,6 +437,6 @@ const initState: RootState = {
 export const rootReducers = (state: RootState = initState, action: any): RootState => {
 	switch (action.type) {
 		default:
-			return { ...state };
+			return state;
 	}
 };

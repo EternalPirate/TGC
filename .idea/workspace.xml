@@ -2,77 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="196cb070-741d-488f-8b92-363d82d8175b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/my-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/assets/data/chart_data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/assets/data/chart_data_test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/es2015-polyfills.7f5984db89683d0a4d23.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/main.575ad0ec87938513efdc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/polyfills.74c78541fda5300b4211.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/runtime.26209474bfa8dc87a77c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-app/styles.6e039c3085f71f68d522.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-buttons/chart-buttons.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-buttons/chart-buttons.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-buttons/chart-buttons.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-frame/chart-frame.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-frame/chart-frame.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-frame/chart-frame.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-polyline/chart-polyline.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-polyline/chart-polyline.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-polyline/chart-polyline.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-labels/chart-x-labels.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-labels/chart-x-labels.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-labels/chart-x-labels.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-lines/chart-x-lines.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-lines/chart-x-lines.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-x-lines/chart-x-lines.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-y-labels/chart-y-labels.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-y-labels/chart-y-labels.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-elements/chart-y-labels/chart-y-labels.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-main/chart-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-main/chart-main.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-main/chart-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-services/chart-events.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-thumb/chart-thumb.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-thumb/chart-thumb.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-thumb/chart-thumb.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart-utils/chart-utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chart/chart.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -87,11 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="221">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -100,10 +43,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/actions/rootActions/index.tsx">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret selection-end-line="3" />
+            <state relative-caret-position="624">
+              <caret line="441" column="2" selection-start-line="441" selection-start-column="2" selection-end-line="441" selection-end-column="2" />
+              <folding>
+                <element signature="n#!!block;n#ChartProp#0" />
+                <element signature="n#!!block;n#RootState#0" />
+                <element signature="e#820#6021#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#123#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,24 +149,25 @@
         <option value="$PROJECT_DIR$/src/app/chart/chart-directives/dragEl.directive.ts" />
         <option value="$PROJECT_DIR$/my-app/package.json" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" />
-        <option value="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" />
         <option value="$PROJECT_DIR$/src/store/actions/chartFrameActions/chartFrameActions.tsx" />
         <option value="$PROJECT_DIR$/src/components/ChartPolyline/ChartPolyline.tsx" />
         <option value="$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/utils/frameUtils.tsx" />
         <option value="$PROJECT_DIR$/src/models/dataModel.tsx" />
         <option value="$PROJECT_DIR$/src/store/reducers/index.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/store/actions/rootActions/index.tsx" />
         <option value="$PROJECT_DIR$/src/store/actions/rootActions/rootActions.tsx" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx" />
+        <option value="$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="557" />
-    <option name="width" value="1370" />
+    <option name="x" value="544" />
+    <option name="width" value="1383" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -228,40 +189,6 @@
               <item name="TGC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ChartFrame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="rootActions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -274,7 +201,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="javascript.karma.karma_node_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TGC_ANGULAR" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -282,7 +209,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\PROJECTS\MY\TGC\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -346,11 +273,13 @@
       <workItem from="1553967367974" duration="53000" />
       <workItem from="1553967440496" duration="19000" />
       <workItem from="1553967476139" duration="2092000" />
+      <workItem from="1553974193539" duration="565000" />
+      <workItem from="1553974776079" duration="1223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60619000" />
+    <option name="totallyTimeSpent" value="65697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -362,15 +291,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="557" y="0" width="1370" height="1047" extended-state="0" />
+    <frame x="544" y="0" width="1383" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2468021" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27752978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49962378" visible="true" weight="0.28730512" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962378" weight="0.14699332" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -380,6 +310,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32929516" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003762" side_tool="true" weight="0.24559471" />
+      <window_info anchor="bottom" id="Quokka" order="12" weight="0.3295964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -517,16 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions/chartFrameActions/chartFrameActions.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -567,13 +488,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/ChartXLabels/ChartXLabels.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ChartPolyline/ChartPolyline.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -612,16 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="438" selection-start-line="438" selection-end-line="438" />
-          <folding>
-            <element signature="e#893#6094#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/dataModel.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -636,10 +540,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/chartFrame/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ChartFrame/ChartFrame.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducers/rootReducers.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="441" column="2" selection-start-line="441" selection-start-column="2" selection-end-line="441" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!block;n#ChartProp#0" />
+            <element signature="n#!!block;n#RootState#0" />
+            <element signature="e#820#6021#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/chartFrame/chartFrameReducer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="221">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

@@ -32,11 +32,11 @@ export const chartFrameReducer = (state = initState, action: any) => {
 				...newState
 			};
 		case DRAG_LEFT_DRAGGABLE_BORDER:
-			return { state };
+			return state;
 		case DRAG_RIGHT_DRAGGABLE_BORDER:
-			return { state };
+			return state;
 			
 		default:
-			return { state };
+			return state;
 	}
 };

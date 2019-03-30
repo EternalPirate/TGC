@@ -8,20 +8,28 @@ import { ChartButtons } from './hocComponents/ChartButtons/ChartButtons';
 import { ChartThumb } from './hocComponents/ChartThumb/ChartThumb';
 import { calcFrameArea } from './utils/frameUtils';
 import { updateFrame } from './store/actions/chartFrameActions';
-import { Settings } from './store/reducers/rootReducers/rootReducers';
+import { ChartProp } from './store/reducers/rootReducers/rootReducers';
 import { CombinedState } from './store/reducers';
+import { SortedData } from './models/dataModel';
 
 
-class App extends Component<any, Settings> {
+interface AppComponentState {
+    data: SortedData;
+    chart: ChartProp;
+}
+
+
+class App extends Component<any, AppComponentState> {
     componentDidMount() {
-        const xLen = this.props.rootState.data.x.data.length - 1;
-        // this.props.settings.main.height += settings.main.paddingBot;
+        const xLen = this.props.data.x.data.length - 1;
     
         // init visible frame will be 20% of chart length
-        const to = Math.floor(xLen * this.props.rootState.chart.initRatioPercent);
+        const to = Math.floor(xLen * this.props.chart.initRatioPercent);
     
-        const frameArea = calcFrameArea(this.props.rootState.data.y, 0, to);
+        // calc initial visible frame
+        const frameArea = calcFrameArea(this.props.data.y, 0, to);
         
+        // set initial visible frame
         this.props.updateFrame(frameArea);
     }
     
@@ -38,8 +46,11 @@ class App extends Component<any, Settings> {
     }
 }
 
-const mapStateToProps = (state: CombinedState) => {
-    return { ...state }
+const mapStateToProps = (state: CombinedState): AppComponentState => {
+    return {
+        data: state.rootState.data,
+        chart: state.rootState.chart
+    }
 };
 
 export default connect(mapStateToProps, {updateFrame})(App);
