@@ -1,4 +1,5 @@
 import { SortedY } from '~/models/dataModel';
+import { FrameState } from '~/store/reducers/chartFrame/frameReducer';
 
 export function roundUpVal(val: number) {
 	// round up maxVal
@@ -9,7 +10,7 @@ export function roundUpVal(val: number) {
 	
 }
 
-export function calcFrameArea(yData: SortedY[], from: number, to: number) {
+export function calcFrameArea(yData: SortedY[], from: number, to: number): FrameState {
 	let maxValHeight = 0;
 	const visibleData = [];
 	for (let yDataIndex = 0; yDataIndex < yData.length; yDataIndex++) {
@@ -30,4 +31,19 @@ export function calcFrameArea(yData: SortedY[], from: number, to: number) {
 		visibleData,
 		maxValHeight: roundUpVal(maxValHeight)
 	};
+}
+
+export function updateObjectInArray(array: any[], action: {index: number, item: any}) {
+	return array.map((item, index) => {
+		if (index !== action.index) {
+			// This isn't the item we care about - keep it as-is
+			return item
+		}
+		
+		// Otherwise, this is the one we want - return an updated value
+		return {
+			...item,
+			...action.item
+		}
+	})
 }

@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux'
 
 import { rootReducers, RootState } from '~/store/reducers/rootReducers/rootReducers';
-import { chartFrameReducer } from '~/store/reducers/chartFrame';
+import { frameReducer, FrameState } from '~/store/reducers/chartFrame/frameReducer';
 
 
 export interface CombinedState {
 	rootState: RootState;
-	chartFrameState: any;
+	frameState: FrameState;
 }
 
 export default combineReducers<CombinedState>({
 	rootState: rootReducers,
-	chartFrameState: chartFrameReducer
+	frameState: frameReducer
 })

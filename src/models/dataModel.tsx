@@ -13,8 +13,8 @@ export interface ChartObj {
 
 export interface SortedX {
 	columnKey?: string;
-	type?: string;
-	data?: ChartMetaData;
+	type: string;
+	data: ChartMetaData;
 	maxValLength?: number;
 }
 

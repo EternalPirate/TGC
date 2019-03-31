@@ -3,23 +3,33 @@ import { connect } from 'react-redux';
 
 import appStyle from '~/App.scss';
 
-import { ChartMain } from '~/hocComponents/ChartMain/ChartMain';
-import { ChartButtons } from '~/hocComponents/ChartButtons/ChartButtons';
-import { ChartThumb } from '~/hocComponents/ChartThumb/ChartThumb';
+import ChartMain from '~/hocComponents/ChartMain/ChartMain';
+import ChartThumb from '~/hocComponents/ChartThumb/ChartThumb';
+import ChartButtons from '~/hocComponents/ChartButtons/ChartButtons';
 import { calcFrameArea } from '~/utils/frameUtils';
 import { updateFrame } from '~/store/actions/chartFrameActions';
 import { ChartProp } from '~/store/reducers/rootReducers/rootReducers';
 import { CombinedState } from '~/store/reducers';
 import { SortedData } from '~/models/dataModel';
+import { FrameState } from '~/store/reducers/chartFrame/frameReducer';
 
 
-interface AppComponentState {
+interface AppComponentOwnProps {
+}
+
+interface AppComponentStateProps {
     data: SortedData;
     chart: ChartProp;
 }
 
+interface AppComponentDispatchProps {
+    updateFrame: (frameArea: FrameState) => void;
+}
 
-class App extends Component<any, AppComponentState> {
+type AppComponentCombinedProps = AppComponentOwnProps & AppComponentStateProps & AppComponentDispatchProps;
+
+
+class App extends Component<AppComponentCombinedProps> {
     componentDidMount() {
         // get x axis length
         const xLen = this.props.data.x.data.length - 1;
@@ -47,7 +57,7 @@ class App extends Component<any, AppComponentState> {
     }
 }
 
-const mapStateToProps = (state: CombinedState): AppComponentState => {
+const mapStateToProps = (state: CombinedState): AppComponentStateProps => {
     return {
         data: state.rootState.data,
         chart: state.rootState.chart
