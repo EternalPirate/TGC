@@ -1,12 +1,5 @@
-export const CALC_INIT_STATE = 'CALC_INIT_STATE';
+import { ChartProp } from '~/store/reducers/rootReducers/rootReducers';
 
-export const calcInitState = () => {
-	
-	// return (dispatch, getState) => {
-	// 	console.log(getState());
-	//
-	// 	dispatch({
-	// 		type: CALC_INIT_STATE
-	// 	})
-	// }
-};
+export const UPDATE_CHART_PROPS = 'UPDATE_CHART_PROPS';
+
+export const updateChart = (chartProp: ChartProp) => ({type: UPDATE_CHART_PROPS, payload: chartProp});

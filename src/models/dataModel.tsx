@@ -12,10 +12,10 @@ export interface ChartObj {
 }
 
 export interface SortedX {
-	columnKey?: string;
+	columnKey: string;
 	type: string;
 	data: ChartMetaData;
-	maxValLength?: number;
+	maxValLength: number;
 }
 
 export interface SortedY {

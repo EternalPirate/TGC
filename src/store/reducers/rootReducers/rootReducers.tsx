@@ -1,4 +1,5 @@
 import { SortedData } from '~/models/dataModel';
+import { UPDATE_CHART_PROPS } from '~/store/actions/rootActions/rootActions';
 
 export interface Settings {
 	// main chart
@@ -398,6 +399,13 @@ const initState: RootState = {
 
 export const rootReducers = (state: RootState = initState, action: any): RootState => {
 	switch (action.type) {
+		case UPDATE_CHART_PROPS:
+			const newChart: ChartProp = action.payload;
+			
+			return {
+				...state,
+				chart: { ...newChart }
+			};
 		default:
 			return state;
 	}

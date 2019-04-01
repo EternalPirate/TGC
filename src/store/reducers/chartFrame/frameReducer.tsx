@@ -1,10 +1,9 @@
 import {
-	DRAG_LEFT_DRAGGABLE_BORDER,
-	DRAG_RIGHT_DRAGGABLE_BORDER, TOGGLE_FRAME_ELEMENT,
+	TOGGLE_FRAME_ELEMENT,
 	UPDATE_FRAME
 } from '~/store/actions/chartFrameActions';
 import { SortedY } from '~/models/dataModel';
-import { updateObjectInArray } from '~/utils/frameUtils';
+import { calcFrameArea, updateObjectInArray } from '~/utils/frameUtils';
 
 
 export interface FrameState {
@@ -30,9 +29,7 @@ export const frameReducer = (state: FrameState = initState, action: any) => {
 		case UPDATE_FRAME:
 			const newState: FrameState = action.payload;
 			
-			return {
-				...newState
-			};
+			return { ...newState };
 		case TOGGLE_FRAME_ELEMENT:
 			const frameElIdx: number = action.payload;
 			const frameEl = { ...state.visibleData[frameElIdx] };
@@ -43,14 +40,13 @@ export const frameReducer = (state: FrameState = initState, action: any) => {
 				item: frameEl
 			});
 			
+			
+			// const frameArea: FrameState = calcFrameArea(updatedVisibleData, state.from, state.to);
+			
 			return {
 				...state,
 				visibleData: updatedVisibleData
 			};
-		case DRAG_LEFT_DRAGGABLE_BORDER:
-			return state;
-		case DRAG_RIGHT_DRAGGABLE_BORDER:
-			return state;
 			
 		default:
 			return state;

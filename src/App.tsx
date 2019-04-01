@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dispatch, bindActionCreators, Action } from 'redux';
 import { connect } from 'react-redux';
 
 import appStyle from '~/App.scss';
@@ -12,6 +13,7 @@ import { ChartProp } from '~/store/reducers/rootReducers/rootReducers';
 import { CombinedState } from '~/store/reducers';
 import { SortedData } from '~/models/dataModel';
 import { FrameState } from '~/store/reducers/chartFrame/frameReducer';
+import { updateChart } from '~/store/actions/rootActions';
 
 
 interface AppComponentOwnProps {
@@ -24,6 +26,7 @@ interface AppComponentStateProps {
 
 interface AppComponentDispatchProps {
     updateFrame: (frameArea: FrameState) => void;
+    updateChart: (chart: ChartProp) => void;
 }
 
 type AppComponentCombinedProps = AppComponentOwnProps & AppComponentStateProps & AppComponentDispatchProps;
@@ -39,9 +42,14 @@ class App extends Component<AppComponentCombinedProps> {
     
         // calc initial visible frame
         const frameArea = calcFrameArea(this.props.data.y, 0, to);
-        
+    
         // set initial visible frame
         this.props.updateFrame(frameArea);
+        // set initial x axis length
+        this.props.updateChart({
+            ...this.props.chart,
+            xLen
+        });
     }
     
     render() {
@@ -57,11 +65,15 @@ class App extends Component<AppComponentCombinedProps> {
     }
 }
 
-const mapStateToProps = (state: CombinedState): AppComponentStateProps => {
-    return {
-        data: state.rootState.data,
-        chart: state.rootState.chart
-    }
-};
+const mapStateToProps = (state: CombinedState): AppComponentStateProps => ({
+    data: state.rootState.data,
+    chart: state.rootState.chart
+});
 
-export default connect(mapStateToProps, {updateFrame})(App);
+const mapDispatchToProps = (dispatch: Dispatch<Action<AppComponentDispatchProps>>) => bindActionCreators({
+    updateFrame: updateFrame,
+    updateChart: updateChart
+}, dispatch);
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

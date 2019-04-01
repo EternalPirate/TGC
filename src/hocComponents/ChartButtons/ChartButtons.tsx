@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { bindActionCreators, Dispatch, Action } from 'redux';
 import { connect } from 'react-redux';
 
 import { LineButton } from '~/components/UI/LineButton/LineButton';
 import { CombinedState } from '~/store/reducers';
 import { FrameState } from '~/store/reducers/chartFrame/frameReducer';
-import { toggleFrameElement } from '~/store/actions/chartFrameActions';
+import { toggleFrameElement, updateFrame } from '~/store/actions/chartFrameActions';
 
 
 interface ChartButtonsOwnProps {
@@ -16,12 +17,20 @@ interface ChartButtonsStateProps {
 
 interface ChartButtonsDispatchProps {
 	toggleFrameElement: (index: number) => void;
+	updateFrame: (frameArea: FrameState) => void;
 }
 
 type ChartButtonsCombinedProps = ChartButtonsOwnProps & ChartButtonsStateProps & ChartButtonsDispatchProps;
 
 
 class ChartButtons extends Component<ChartButtonsCombinedProps> {
+	
+	toggleButton(buttonsIdx: number): void {
+		this.props.toggleFrameElement(buttonsIdx);
+		
+		// update chart with new visible
+		// this.props.updateFrame(this.props.frameState);
+	}
 	
 	render() {
 		const frameState: FrameState = this.props.frameState;
@@ -36,7 +45,7 @@ class ChartButtons extends Component<ChartButtonsCombinedProps> {
 					key={curBtn.columnKey}
 					isVisible={curBtn.isVisible}
 					color={curBtn.color}
-					toggle={() => (this.props.toggleFrameElement(buttonsIdx))}
+					toggle={() => (this.toggleButton(buttonsIdx))}
 				>{curBtn.name}</LineButton>
 			));
 		}
@@ -45,10 +54,13 @@ class ChartButtons extends Component<ChartButtonsCombinedProps> {
 	};
 }
 
-const mapStateToProps = (state: CombinedState): ChartButtonsStateProps => {
-	return {
-		frameState: state.frameState,
-	}
-};
+const mapStateToProps = (state: CombinedState): ChartButtonsStateProps => ({
+	frameState: state.frameState
+});
 
-export default connect(mapStateToProps, {toggleFrameElement})(ChartButtons);
+const mapDispatchToProps = (dispatch: Dispatch<Action<ChartButtonsDispatchProps>>) => bindActionCreators({
+	toggleFrameElement: toggleFrameElement,
+	updateFrame: updateFrame
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChartButtons);

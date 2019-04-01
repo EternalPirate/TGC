@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ChartPolyline from '~/components/ChartPolyline/ChartPolyline';
-import { ChartXLines } from '~/components/ChartXLines/ChartXLines';
-import { ChartXLabels } from '~/components/ChartXLabels/ChartXLabels';
-import { ChartYLabels } from '~/components/ChartYLabels/ChartYLabels';
+import ChartYLabels from '~/components/ChartYLabels/ChartYLabels';
+import ChartXLines from '~/components/ChartXLines/ChartXLines';
+import ChartXLabels from '~/components/ChartXLabels/ChartXLabels';
 import { CombinedState } from '~/store/reducers';
 import { ChartProp, Settings } from '~/store/reducers/rootReducers/rootReducers';
 
@@ -48,7 +48,7 @@ class ChartMain extends Component<ChartMainCombinedProps> {
                 height={svg.height}
 				x="0"
 				y="0">
-				<ChartXLines/>
+				<ChartXLines svg={svg}/>
 				<ChartXLabels/>
 				<ChartPolyline svg={svg}/>
 				<ChartYLabels/>

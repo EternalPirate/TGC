@@ -7,6 +7,8 @@ import { FrameState } from '~/store/reducers/chartFrame/frameReducer';
 import { CombinedState } from '~/store/reducers';
 import { ChartProp } from '~/store/reducers/rootReducers/rootReducers';
 import { ChartSvg } from '~/hocComponents/ChartMain/ChartMain';
+import { updateFrame } from '~/store/actions/chartFrameActions';
+import { Dispatch, Action, bindActionCreators } from 'redux';
 
 
 enum RectArr {
@@ -45,6 +47,7 @@ interface ChartFrameStateProps {
 }
 
 interface ChartFrameDispatchProps {
+	updateFrame: (frameArea: FrameState) => void;
 }
 
 type ChartFrameCombinedProps = ChartFrameOwnProps & ChartFrameStateProps & ChartFrameDispatchProps;
@@ -104,10 +107,28 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 	// draggable border init width
 	private DBWidth = 14;
 	// draggable rect init width
-	private DRWidth: number;
+	private readonly DRWidth: number;
 	// min gap between borders
-	private minBorderGap: number;
+	private readonly minBorderGap: number;
 	
+	
+	private static getMouseXPosition(event: any, ownerSVGElement: SVGSVGElement): number {
+		// get parent SVG matrix
+		const CTM = ownerSVGElement.getScreenCTM();
+		
+		// check for CTM is defined and has needed keys
+		if (!(CTM && Number.isInteger(CTM.a) && Number.isInteger(CTM.e))) {
+			return 0;
+		}
+		
+		if (event.touches) {
+			// override (e) if this is touch device
+			event = event.touches[0];
+		}
+		
+		// calculate X position
+		return (event.clientX - CTM.e) / CTM.a;
+	}
 	
 	constructor(props: ChartFrameCombinedProps) {
 		super(props);
@@ -222,7 +243,7 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 				ownerSVGEl: ownerSVGElement,
 				x: rect.x.baseVal.value,
 				width: rect.width.baseVal.value,
-				offsetX: this.getMouseXPosition(event, ownerSVGElement)
+				offsetX: ChartFrame.getMouseXPosition(event, ownerSVGElement)
 			};
 		}
 	}
@@ -234,7 +255,7 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 			
 			
 			// get mouse/touch position
-			const clientX: number = this.getMouseXPosition(event, this.dragEl.ownerSVGEl);
+			const clientX: number = ChartFrame.getMouseXPosition(event, this.dragEl.ownerSVGEl);
 			// calculate drag position
 			const translateX = Math.floor(clientX - this.dragEl.offsetX);
 			
@@ -301,11 +322,12 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 			}
 			
 			
-			
 			this.setState({
 				rectArr: newRectArr
 			});
-			// this.calcDragEvent();
+
+
+			this.calcDragEvent(newRectArr);
 		}
 	}
 	
@@ -314,37 +336,22 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 		this.dragEl = undefined;
 	}
 	
-	private calcDragEvent() {
+	private calcDragEvent(newRectArr: RectObj[]) {
 		// get proportional FROM index
-		let from = this.state.rectArr[RectArr.DR].x / this.props.chart.width;
+		let from = newRectArr[RectArr.DR].x / this.props.chart.width;
 		// get real FROM index
 		from = Math.floor(this.props.chart.xLen * from);
 		
 		// get proportional TO index
-		let to = this.state.rectArr[RectArr.RR].x / this.props.chart.width;
+		let to = newRectArr[RectArr.RR].x / this.props.chart.width;
 		// get real TO index
 		to = Math.floor(this.props.chart.xLen * to);
 		
-		console.log({from, to});
-		
-		// this.props.chart.setVisibleFrame(from, to);
-	}
-	
-	private getMouseXPosition(event: any, ownerSVGElement: SVGSVGElement): number {
-		// get parent SVG matrix
-		const CTM = ownerSVGElement.getScreenCTM();
-		
-		if (!(CTM && CTM.a && CTM.e)) {
-			return 0;
-		}
-		
-		if (event.touches) {
-			// override (e) if this is touch device
-			event = event.touches[0];
-		}
-
-		// calculate X position
-		return (event.clientX - CTM.e) / CTM.a;
+		this.props.updateFrame({
+			...this.props.frameState,
+			from,
+			to
+		});
 	}
 	
 	private checkBorder(num: number) {
@@ -381,18 +388,19 @@ class ChartFrame extends Component<ChartFrameCombinedProps> {
 	}
 	
 	render() {
-		console.log(this.state.rectArr);
 		const rectArr: JSX.Element[] = this.createDraggableFrame();
 		
 		return (<g className={chartFrameStyle.g}>{rectArr}</g>)
 	};
 }
 
-const mapStateToProps = (state: CombinedState) => {
-	return {
-		frameState: state.frameState,
-		chart: state.rootState.chart
-	}
-};
+const mapStateToProps = (state: CombinedState): ChartFrameStateProps => ({
+	frameState: state.frameState,
+	chart: state.rootState.chart
+});
 
-export default connect(mapStateToProps)(ChartFrame);
+const mapDispatchToProps = (dispatch: Dispatch<Action<ChartFrameDispatchProps>>) => bindActionCreators({
+	updateFrame: updateFrame
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChartFrame);

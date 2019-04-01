@@ -1,3 +1,3 @@
 export {
-	calcInitState
+	updateChart
 } from './rootActions'
