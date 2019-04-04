@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <g>
 
-  </div>
+  </g>
 </template>
 
 <script>
 export default {
-  name: 'ChartThumb',
-  props: ['data', 'visibleFrame'],
+  name: 'ChartPolyline',
+  props: ['data', 'svg']
 }
 </script>
 

@@ -24,10 +24,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('setData')
     this.buttonsArr = this.buildButtons(this.$store.getters.chartByIdx(0))
-
-    console.log(this.buttonsArr)
   },
   methods: {
     togglePath (button) {
